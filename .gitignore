@@ -1,0 +1,8 @@
+dist/
+.DS_Store
+.directory
+*.code-workspace
+examples/canny/Process_stub.h
+*.swp
+.stack-work
+/stack.yaml.lock
