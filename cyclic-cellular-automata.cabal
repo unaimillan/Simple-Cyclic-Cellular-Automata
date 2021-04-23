@@ -31,6 +31,10 @@ library
   build-depends:
         base                        >= 4.7 && < 5
       , accelerate                  >= 1.0
+      
+  ghc-options:
+      -Wall
+      -fno-warn-type-defaults
 
 executable cyclic-cellular-automata-exe
   default-language:     Haskell2010
@@ -43,6 +47,8 @@ executable cyclic-cellular-automata-exe
       , accelerate
 
   ghc-options:
+      -Wall
+      -fno-warn-type-defaults
       -O2
       -threaded
       -rtsopts
