@@ -1,5 +1,3 @@
-{-# LANGUAGE DeriveAnyClass #-}
-{-# LANGUAGE DeriveGeneric #-}
 {-# LANGUAGE RebindableSyntax #-}
 
 -- |
@@ -16,14 +14,7 @@ module Lib where
 -- )
 
 import Data.Array.Accelerate
-import qualified Prelude as P
 
 -- | A simple vector inner product
 dotp :: Acc (Vector Double) -> Acc (Vector Double) -> Acc (Scalar Double)
 dotp xs ys = fold (+) 0 (zipWith (*) xs ys)
-
-type Cell = Word8
-
-type World = Matrix Cell
-
-worldSize = 256
