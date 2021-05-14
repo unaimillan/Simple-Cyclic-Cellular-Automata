@@ -1,4 +1,5 @@
 {-# LANGUAGE CPP #-}
+{-# LANGUAGE ExplicitNamespaces #-}
 
 -- |
 -- Module      : Main
@@ -10,13 +11,18 @@
 -- Portability : non-portable (GHC extensions)
 module Main where
 
-import CCA
+import CCA (colourise, createWorld, draw, updateWorld)
 import Control.Exception (evaluate)
 import Data.Array.Accelerate as A
+  ( Vector,
+    Z (Z),
+    fromList,
+    type (:.) ((:.)),
+  )
 import qualified Graphics.Gloss as GL
 import Graphics.Gloss.Data.Color (black)
-import Lib
-import Text.Printf
+import Lib (dotp)
+import Text.Printf (printf)
 import Prelude as P
 
 #ifdef ACCELERATE_LLVM_NATIVE_BACKEND
